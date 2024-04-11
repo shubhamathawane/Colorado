@@ -1,0 +1,81 @@
+{% extends "index.html" %} {% block content %}
+<div class="container text-white">
+  <div class="align-items-center d-flex h-100 justify-content-center">
+    <div class="w-50">
+      <div class="d-flex justify-content-center">
+        <img class="w-25" src="../static/Logo.png" alt="" />
+      </div>
+      <div class="d-flex justify-content-center text-secondary">
+        <p>Browse, Drop, or Ctrl+V to Paste an Image</p>
+      </div>
+      <div class="mb-2">
+        <!-- <input class="form-control" type="file" id="formFile" /> -->
+        <input type="file" name="uploadfile" id="img" style="display: none" />
+        <label class="bg-dark border btn text-white" for="img">
+          Upload image
+        </label>
+      </div>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        <input
+          type="file"
+          placeholder="Select Image"
+          hidden
+          value="Select Image"
+        />
+        <input
+          class="bg-transparent border p-2 px-3 w-100 text-white"
+          placeholder="Paste Image URL"
+          type="text"
+          id="image_url"
+          name="image_url"
+          required
+        /><br /><br />
+        <div class="d-flex justify-content-end">
+          <input
+            placeholder="filename"
+            type="text"
+            id="filename"
+            name="filename"
+            required
+            class="bg-transparent text-white border mx-3 p-2 px-3 h-100"
+          /><br /><br />
+          <input
+            class="h-100 btn btn-outline-light"
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </form>
+
+      {% if colored_image_url %}
+      <div>
+        <div
+          style="margin-bottom: 200px"
+          class="align-items-center d-flex justify-content-center mt-5"
+        >
+          <img
+            class="w-50 h-50"
+            src="{{ colored_image_url }}"
+            alt="Colored Image"
+          />
+          <div class="d-flex">
+            <a
+              download
+              href="{{ colored_image_url }}"
+              class="btn btn-outline-light ml-4"
+              >Download</a
+            >
+            <button class="bg-transparent mx-2 text-white">Share</button>
+          </div>
+        </div>
+      </div>
+      {% elif errors %}
+      <div class="mt-4 d-flex justify-content-center">
+        <h3>{{ errors }}</h3>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

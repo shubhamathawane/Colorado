@@ -1,0 +1,13 @@
+body {
+  font-family:monospace;
+}
+
+body a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+  position: fixed; 
+  bottom: 0; 
+}
