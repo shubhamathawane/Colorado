@@ -2,7 +2,7 @@
 
 ## Description
 
-Briefly describe the purpose and functionality of the project.
+It's a flask based web application for converting black and white images into colored images.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ Briefly describe the purpose and functionality of the project.
 
 ## Project Structure
 
-\```
+```
 Colorado
 ├── .gitignore
 ├── App
@@ -41,56 +41,53 @@ Colorado
 ├── main.py
 ├── requirements.txt
 └── venv
-\```
+```
 
 ## Installation
 
 1. Clone the repository:
 
-   \```bash
-   git clone <repository-url>
-   \```
+   ```bash
+   git clone https://github.com/shubhamathawane/Colorado
+   ```
 
 2. Navigate to the project directory:
 
-   \```bash
+   ```bash
    cd Colorado
-   \```
+   ```
 
 3. Create a virtual environment (optional but recommended):
 
-   \```bash
+   ```bash
    python3 -m venv venv
-   \```
+   ```
 
 4. Activate the virtual environment:
 
    - On Windows:
 
-     \```bash
+     ```bash
      venv\Scripts\activate
-     \```
+     ```
 
    - On macOS and Linux:
 
-     \```bash
+     ```bash
      source venv/bin/activate
-     \```
+     ```
 
 5. Install dependencies:
 
-   \```bash
+   ```bash
    pip install -r requirements.txt
-   \```
+   ```
+6. Configuration
+### SQLAlchemy URL And API Key
+You can set the SQLAlchemy database URL in the `.env` file as follows:
+```
+API_KEY = 66177db019f3c16343c14895_c7d1aae0434b5b6f27d5_apyhitools
+DB_URLS = sqlite:///db_name
+```
 
-## Usage
-
-Describe how to use the project. Include any necessary configurations, environment variables, or commands.
-
-## Contributing
-
-Provide guidelines for contributing to the project, if applicable.
-
-## License
-
-Specify the project's license information.
+### I have used this api [phot.ai](https://www.phot.ai/developers) [ it gives 25 credites ].
